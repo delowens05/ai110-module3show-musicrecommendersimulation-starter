@@ -17,17 +17,20 @@ Replace this paragraph with your own summary of what your version does.
 
 ## How The System Works
 
-Explain your design in plain language.
+Real-world platforms like Spotify or YouTube learn your taste by watching what you play, skip, and save, then finding patterns across other listeners who behave and listen similarly. That works well, but takes a lot of data and it is hard to explain. However my version takes a simpler and more vauqe approach. it looks directly at the qualities of each song like energy level, emotional tone, and whether it feels acoustic or produced. It then compares them against what a user says they prefer. Songs that are closer to thw users preferences score higher, and the top matches get recommended. The system priorties energy, since that tends to be the one thing listeners feel most immediately when listening to a song and treats genre and mood as signals rather than strict rules.
 
-Some prompts to answer:
+Each song tracks seven components: genre, mood, energy, tempo, valence, danceability, and acousticness. Each user profile stores four preferences: a favorite genre, a favorite mood, a target energy level, and whether they like acoustic music. 
 
-- What features does each `Song` use in your system
-  - For example: genre, mood, energy, tempo
-- What information does your `UserProfile` store
-- How does your `Recommender` compute a score for each song
-- How do you choose which songs to recommend
+Algorithm Recipe: Each song is scored out of a maximum of 7.5 points where: 
 
-You can include a simple diagram or bullet list if helpful.
+- genre match earns +2.0, mood match earns +2.0, and the remaining 3.5 points come from how closely the song's energy, valence, acousticness, and tempo match the user's targets. 
+
+- Songs are then ranked by total score and the top K are returned. 
+
+- One thing id look out for is that genre and mood together make up more than half the possible score, so a song that perfectly matches a user's energy and vibe but falls into an unfamiliar genre will often lose to a weaker fit that just happens to share the same genre label.
+
+Screen Shot: 
+![alt text](<Screenshot 2026-04-12 at 6.52.41 PM.png>)
 
 ---
 
