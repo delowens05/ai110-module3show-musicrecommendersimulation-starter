@@ -17,9 +17,9 @@ def main() -> None:
 
     user_prefs = {
         "favorite_genre":  "pop",
-        "favorite_mood":   "happy",
-        "target_energy":   0.60,
-        "likes_acoustic":  0.57,
+        "favorite_mood":   "chill",
+        "target_energy":   0.70,
+        "likes_acoustic":  1.00,
         "target_valence":  0.65,
         "target_tempo":    90.0,
     }

@@ -99,10 +99,9 @@ Read and complete `model_card.md`:
 
 [**Model Card**](model_card.md)
 
-Write 1 to 2 paragraphs here about what you learned:
+Testing two different profiles made it clear that the system does not treat genre and mood equally, it treats them as two separate bonus tickets that happen to be worth the same amount. My forst tested profile  asked for a chill mood but a very high energy level (1.0). Because no song in the catalog is both chill and high-energy at the same time, the system was forced to pick a side. Songs with a chill mood earned +2.0 for the mood match but were then penalized heavily on energy because their actual energy (around 0.35–0.42) is so far from 1.0.  The result was that intense and happy songs floated to the top even though the user explicitly asked for chill. The system was not "wrong" by its own math, it just did not understand that chill and energy 1.0 are contradictory requests, so it treated them as two independent dials instead of one conflicting signal.
 
-- about how recommenders turn data into predictions
-- about where bias or unfairness could show up in systems like this
+my personal profile (pop genre, chill mood) was hard. there is no pop song in the catalog that is also tagged chill. That means no song can ever earn both the +2.0 genre bonus and the +2.0 mood bonus at the same time. The system is forced to recommend either a pop song that feels wrong emotionally, or a chill song from a completely different genre. Since the default energy and acousticness targets happen to line up better with the chill lofi songs than with the upbeat pop songs, mood ended up winning and the pop genre preference was essentially ignored. 
 
 
 ---
